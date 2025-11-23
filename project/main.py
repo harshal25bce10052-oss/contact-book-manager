@@ -1,14 +1,9 @@
 import json
 import os
 
-# --- Configuration ---
 CONTACTS_FILE = 'contacts.json'
 
 def load_contacts():
-    """
-    Loads contacts from the JSON file.
-    If the file doesn't exist, it returns an empty list.
-    """
     if os.path.exists(CONTACTS_FILE):
         try:
             with open(CONTACTS_FILE, 'r') as f:
@@ -20,9 +15,6 @@ def load_contacts():
     return []
 
 def save_contacts(contacts):
-    """
-    Saves the current list of contacts to the JSON file.
-    """
     try:
         with open(CONTACTS_FILE, 'w') as f:
             # Write the contacts list as formatted JSON to the file
@@ -31,10 +23,6 @@ def save_contacts(contacts):
         print("\n[ERROR] Could not save data to file. Check file permissions.")
 
 def add_contact(contacts):
-    """
-    Prompts the user for contact details and adds a new contact dictionary
-    to the list.
-    """
     print("\n--- Add New Contact ---")
     name = input("Enter Name (required): ").strip()
     phone = input("Enter Phone Number: ").strip()
@@ -54,9 +42,6 @@ def add_contact(contacts):
     print(f"\nSUCCESS: Contact '{name}' added and saved.")
 
 def view_contacts(contacts):
-    """
-    Displays all contacts in a formatted list.
-    """
     if not contacts:
         print("\n[INFO] The contact book is currently empty.")
         return
@@ -71,9 +56,6 @@ def view_contacts(contacts):
     print(f"Total Contacts: {len(contacts)}")
 
 def search_contacts(contacts):
-    """
-    Prompts for a search query and finds matching contacts by name, phone, or email.
-    """
     if not contacts:
         print("\n[INFO] The contact book is empty, nothing to search.")
         return
@@ -99,9 +81,6 @@ def search_contacts(contacts):
         print(f"\n[INFO] No contacts found matching '{query}'.")
 
 def delete_contact(contacts):
-    """
-    Deletes a contact by asking the user for the index number.
-    """
     if not contacts:
         print("\n[INFO] No contacts to delete.")
         return
@@ -124,9 +103,6 @@ def delete_contact(contacts):
 
 
 def display_menu():
-    """
-    Prints the main menu options.
-    """
     print("\n==================================")
     print("  PYTHON CONTACT BOOK MANAGER (v1)")
     print("==================================")
@@ -138,10 +114,6 @@ def display_menu():
     print("----------------------------------")
 
 def main():
-    """
-    The main function to run the Contact Book application.
-    """
-    # Load existing contacts at startup
     contacts = load_contacts()
     print("Welcome to the Console Contact Manager!")
 
@@ -164,4 +136,5 @@ def main():
             print("\n[ERROR] Invalid choice. Please enter a number between 1 and 5.")
 
 if __name__ == "__main__":
+
     main()
