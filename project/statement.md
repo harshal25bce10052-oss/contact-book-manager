@@ -1,4 +1,4 @@
-# Project Statement – Python Contact Book Manager (v1)
+# Project Statement – Python Contact Book Manager 
 
 ## Problem Statement  
 In today's world, almost everyone has many contacts (friends, family, classmates, teachers, etc.), and remembering all phone numbers and emails is very hard without any tool. Mobile phones have built-in contact apps, but sometimes we want something very simple that runs on a computer, doesn't need internet, and we can understand or modify the code ourselves.  
